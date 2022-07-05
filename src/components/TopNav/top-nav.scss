@@ -1,0 +1,46 @@
+.top-nav {
+    display: grid;
+    grid-template-columns: 5% 1fr 5% 5% 10%;
+    align-items: center;
+    font-family: $font;
+    padding: 10px;
+
+    &__hamburger {
+        height: 20px;
+        width: 20px;
+        background-color: #00b494;
+        padding: 7px;
+        border-radius: 2px;
+    }
+
+    input {
+        border: none;
+    }
+
+    &__email, &__notification {
+        position: relative;
+
+        img {
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    &__logout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999C9E;
+
+        img {
+            height: 15px;
+            width: 15px;
+        }
+    }
+
+    &__count {
+        position: absolute;
+        bottom: 12px;
+        left: 10px;
+    }
+}

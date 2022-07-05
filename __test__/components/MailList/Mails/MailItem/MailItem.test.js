@@ -1,7 +1,7 @@
 import {
 	render
 } from '@testing-library/react';
-import MailItem from '../../../../src/components/MailList/Mails/MailItem';
+import MailItem from '../../../../../src/components/MailList/Mails/MailItem';
 
 describe('MailItem', () => {
 	test('renders component', () => {

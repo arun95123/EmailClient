@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './colored-label.scss';
 
-const ColoredLabel = ({text, color}) => {
+const ColoredLabel = ({text, color, classname}) => {
 	const colorMap = {
 		'red': 'red-label',
 		'yellow': 'yellow-label',
@@ -10,7 +10,7 @@ const ColoredLabel = ({text, color}) => {
 	};
 
 	return (
-		<div className={`colored-label ${colorMap[color]}`}>{text}</div>
+		<div className={`colored-label ${colorMap[color]} ${classname}`}>{text}</div>
 	);
 };
 
@@ -20,10 +20,12 @@ ColoredLabel.propTypes = {
 		PropTypes.number
 	]).isRequired,
 	color: PropTypes.string,
+	classname: PropTypes.string,
 };
 
 ColoredLabel.defaultProps = {
-	color: 'red'
+	color: 'red',
+	classname: '',
 };
 
 export default ColoredLabel;

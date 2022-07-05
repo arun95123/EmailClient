@@ -1,7 +1,7 @@
 import {
 	render
 } from '@testing-library/react';
-import MailListHeaderSearch from '../../../../src/components/MailList/MailListHeader/MailListHeaderSearch';
+import MailListHeaderSearch from '../../../../../src/components/MailList/MailListHeader/MailListHeaderSearch';
 
 describe('MailListHeaderSearch', () => {
 	test('Show MailList Header search bar', () => {

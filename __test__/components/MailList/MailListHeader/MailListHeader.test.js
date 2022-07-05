@@ -1,7 +1,7 @@
 import {
 	render
 } from '@testing-library/react';
-import MailListHeader from '../../../src/components/MailList/MailListHeader';
+import MailListHeader from '../../../../src/components/MailList/MailListHeader';
 
 describe('MailListHeader', () => {
 	test('Show MailList Header section', () => {
