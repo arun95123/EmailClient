@@ -18,7 +18,8 @@ const Navigator = () => {
 			image:  Inbox,
 			imageAlt: 'inbox',
 			showDivider: true,
-			count: 25
+			count: 25,
+			countColor: 'yellow'
 		},
 		{
 			header: 'Sent Mail',
@@ -37,7 +38,8 @@ const Navigator = () => {
 			image:  Draft,
 			imageAlt: 'draft',
 			showDivider: true,
-			count: 2
+			count: 2,
+			countColor: 'red'
 		},
 		{
 			header: 'Trash',
@@ -81,13 +83,14 @@ const Navigator = () => {
 			<ComponseEmail />
 			<div className="navigator__folders">
 				<h5>FOLDERS</h5>
-				{folders.map(({header, image, imageAlt, count, showDivider}) => (
+				{folders.map(({header, image, imageAlt, count, countColor, showDivider}) => (
 					<NavigatorItem 
 						key={header} 
 						header={header} 
 						image={image}
 						imageAlt={imageAlt}
 						count={count}
+						countColor={countColor}
 						showDivider={showDivider}
 					/>
 				))}

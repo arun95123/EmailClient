@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from '../Nav';
+import TopNav from '../TopNav';
 import Navigator from '../Navigator';
 import MailList from '../MailList';
 import './app.scss';
 
 const App = () => (
 	<React.Fragment>
-		<Nav />
+		<TopNav />
 		<div className="content-area">
 			<Navigator />
 			<MailList />

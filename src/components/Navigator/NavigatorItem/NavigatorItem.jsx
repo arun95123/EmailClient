@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './navigator-item.scss';
+import ColoredLabel from '../../ColoredLabel';
 
-const NavigatorItem = ({image, imageAlt, header, count, showDivider}) => (
+const NavigatorItem = ({image, imageAlt, header, count, countColor, showDivider}) => (
 	<div className="navigator-item">
 		<div className="navigator-item__content">
 			<div className="navigator-item__content-wrapper">
@@ -11,7 +12,7 @@ const NavigatorItem = ({image, imageAlt, header, count, showDivider}) => (
 				</div>
 				<h5 className="navigator-item__content__header">{header}</h5>
 			</div>
-			{count && <div className="navigator-item__content__count">{count}</div>}
+			{count && <ColoredLabel text={count} color={countColor}/>}
 		</div>
 		{showDivider && <hr className="navigator-item__divider"/>}
 	</div>
@@ -22,11 +23,13 @@ NavigatorItem.propTypes = {
 	imageAlt: PropTypes.string.isRequired,
 	header: PropTypes.string.isRequired,
 	count: PropTypes.number,
+	countColor: PropTypes.string,
 	showDivider: PropTypes.bool,
 };
 
 NavigatorItem.defaultProps = {
-	count: null
+	count: null,
+	countColor: null,
 };
 
 export default NavigatorItem;
