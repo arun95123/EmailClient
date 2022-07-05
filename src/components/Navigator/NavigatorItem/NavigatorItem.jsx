@@ -11,7 +11,7 @@ const NavigatorItem = ({image, imageAlt, header, count, showDivider}) => (
 				</div>
 				<h5 className="navigator-item__content__header">{header}</h5>
 			</div>
-			<div className="navigator-item__content__count">{count}</div>
+			{count && <div className="navigator-item__content__count">{count}</div>}
 		</div>
 		{showDivider && <hr className="navigator-item__divider"/>}
 	</div>

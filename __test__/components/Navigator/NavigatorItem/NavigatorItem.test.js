@@ -15,9 +15,10 @@ describe('NavigatorItem', () => {
 		expect(hr).toBeTruthy();
 	});
 
-	test('does not show divider', () => {
-		const {getByText} = render(<NavigatorItem header='Potter' image='dummy-source' imageAlt='dummy' />,);
+	test('does not show divider and count', () => {
+		const {getByText, container} = render(<NavigatorItem header='Potter' image='dummy-source' imageAlt='dummy' />,);
 		const hr = screen.queryByRole('separator');
 		expect(hr).not.toBeInTheDocument();
+		expect(container.getElementsByClassName('navigator-item__content__count').length).toBe(0);
 	});
 });

@@ -8,7 +8,7 @@ module.exports = {
 		'bower_components',
 	],
 	moduleNameMapper: {
-		'\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
+		'\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
 		'\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js'
 	},
 	testEnvironment: 'jsdom',
