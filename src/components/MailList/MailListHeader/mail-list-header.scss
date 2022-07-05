@@ -1,11 +1,26 @@
 $mailHeaderColor: #696C6E;
-.mail-list-header {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 25% 1fr 40%;
 
-    h2 {
-        color: $mailHeaderColor;
-        font-weight: normal;
+.mail-list-header {
+    padding: 20px;
+    .mail-list-header__row {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 25% 1fr 40%;
+    
+        h2 {
+            color: $mailHeaderColor;
+            font-weight: normal;
+        }
+    
+        &__actions {
+            display: flex;
+        }
+
+        &__page {
+            display: flex;
+            justify-content: flex-end;
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
     }
 }

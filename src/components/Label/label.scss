@@ -1,8 +1,11 @@
 $label-background: #ffff;
+$label-color: #686B6D;
 .label {
     display: flex;
     background-color: $label-background;
-    padding: 8px;
+    color: $label-color;
+    padding: 8px 10px;
+    border: 1px solid #E5E6E7;
     border-radius: 2px;
     margin-right: 8px;
     margin-bottom: 8px;
@@ -10,6 +13,7 @@ $label-background: #ffff;
     img {
         height: 15px;
         width: 15px;
+        margin-right: 5px;
     }
 
     p {

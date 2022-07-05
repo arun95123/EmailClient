@@ -41,7 +41,7 @@ describe('Navigator', () => {
 	});
 
 	test('Show Label section', () => {
-		const {getByText, getAllByText} = render(<Navigator />,);
+		const {getByText, getAllByText, getAllByAltText} = render(<Navigator />,);
 		expect(getByText('LABELS')).toBeTruthy();
 		expect(getAllByText('Work')[1]).toBeTruthy();
 		expect(getByText('Family')).toBeTruthy();
@@ -51,6 +51,7 @@ describe('Navigator', () => {
 		expect(getByText('Music')).toBeTruthy();
 		expect(getByText('Photography')).toBeTruthy();
 		expect(getByText('Film')).toBeTruthy();
+		expect(getAllByAltText('label').length).toBe(8);
 	});
 
 	test('Show Compose Email button', () => {

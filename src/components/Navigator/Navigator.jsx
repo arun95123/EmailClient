@@ -8,6 +8,7 @@ import Mail from '../../images/mail.svg';
 import Important from '../../images/important.svg';
 import Draft from '../../images/draft.svg';
 import Trash from '../../images/trash.svg';
+import LabelImage from '../../images/label.svg';
 import './navigator.scss';
 
 const Navigator = () => {
@@ -110,7 +111,9 @@ const Navigator = () => {
 					{labels.map((name) => (
 						<Label 
 							key={name} 
-							name={name} 
+							name={name}
+							image={LabelImage}
+							imageAlt={'label'}
 						/>
 					))}
 				</div>
