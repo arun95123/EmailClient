@@ -25,10 +25,10 @@ describe('Navigator', () => {
 	});
 
 	test('Show Categories section', () => {
-		const {getByText} = render(<Navigator />,);
+		const {getByText, getAllByText} = render(<Navigator />,);
 		const image = screen.getAllByRole('img');
 		expect(getByText('CATEGORIES')).toBeTruthy();
-		expect(getByText('Work')).toBeTruthy();
+		expect(getAllByText('Work')[0]).toBeTruthy();
 		expect(image[5]).toHaveAttribute('alt', 'decorative');
 		expect(getByText('Documents')).toBeTruthy();
 		expect(image[6]).toHaveAttribute('alt', 'decorative');
@@ -38,5 +38,18 @@ describe('Navigator', () => {
 		expect(image[8]).toHaveAttribute('alt', 'decorative');
 		expect(getByText('Clients')).toBeTruthy();
 		expect(image[9]).toHaveAttribute('alt', 'decorative');
+	});
+
+	test('Show Label section', () => {
+		const {getByText, getAllByText} = render(<Navigator />,);
+		expect(getByText('LABELS')).toBeTruthy();
+		expect(getAllByText('Work')[1]).toBeTruthy();
+		expect(getByText('Family')).toBeTruthy();
+		expect(getByText('Home')).toBeTruthy();
+		expect(getByText('Children')).toBeTruthy();
+		expect(getByText('Holidays')).toBeTruthy();
+		expect(getByText('Music')).toBeTruthy();
+		expect(getByText('Photography')).toBeTruthy();
+		expect(getByText('Film')).toBeTruthy();
 	});
 });

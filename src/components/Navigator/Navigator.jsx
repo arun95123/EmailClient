@@ -1,6 +1,7 @@
 import React from 'react';
 
 import NavigatorItem from './NavigatorItem';
+import Label from './Label';
 import Inbox from '../../images/inbox.svg';
 import Mail from '../../images/mail.svg';
 import Important from '../../images/important.svg';
@@ -71,6 +72,8 @@ const Navigator = () => {
 			imageAlt: 'decorative',
 		}
 	];
+
+	const labels = ['Family', 'Work', 'Home', 'Children', 'Holidays', 'Music', 'Photography', 'Film'];
 	return (
 		<div className="navigator">
 			<div className="navigator__folders">
@@ -98,6 +101,18 @@ const Navigator = () => {
 						showDivider={showDivider}
 					/>
 				))}
+			</div>
+			<div className="navigator__labels">
+				<h5>LABELS</h5>
+				<div className="navigator__labels__wrapper">
+					{labels.map((name) => (
+						<Label 
+							key={name} 
+							name={name} 
+						/>
+					))}
+				</div>
+
 			</div>
 		</div>
 	);

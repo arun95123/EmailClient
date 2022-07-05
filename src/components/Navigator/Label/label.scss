@@ -1,0 +1,19 @@
+$label-background: #ffff;
+.label {
+    display: flex;
+    background-color: $label-background;
+    padding: 8px;
+    border-radius: 2px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    img {
+        height: 15px;
+        width: 15px;
+    }
+
+    p {
+        font-size: 12px;
+        margin: 0;
+    }
+}
