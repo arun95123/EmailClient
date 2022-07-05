@@ -1,0 +1,67 @@
+.mail-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 4% 15% 10% 46% 5% 10%;
+    grid-column-gap: 2%;
+    padding: 8px 10px;
+    border-bottom: 1px solid $border-color;
+
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        display: grid;
+        place-content: center;
+        margin: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+    }
+
+    input[type="checkbox"]::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        background-color: white;
+        transform-origin: bottom left;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    input[type="checkbox"]:checked::before {
+        transform: scale(1);
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: $primary-color;
+    }
+
+    h6 {
+        margin: 0;
+        font-weight: normal;
+    }
+
+    img {
+        height: 10px;
+        width: 10px;
+    }
+
+    &__from {
+        justify-self: flex-start;
+    }
+
+    &__subject {
+        justify-self: flex-start;
+    }
+
+    &__timel {
+        justify-self: flex-end;
+    }
+
+    .colored-label {
+        justify-self: flex-end;
+    }
+}
