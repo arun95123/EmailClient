@@ -1,0 +1,11 @@
+$mailHeaderColor: #696C6E;
+.mail-list-header {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 25% 1fr 40%;
+
+    h2 {
+        color: $mailHeaderColor;
+        font-weight: normal;
+    }
+}

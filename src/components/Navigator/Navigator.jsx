@@ -2,7 +2,7 @@ import React from 'react';
 
 import ComponseEmail from './ComponseEmail';
 import NavigatorItem from './NavigatorItem';
-import Label from './Label';
+import Label from '../Label';
 import Inbox from '../../images/inbox.svg';
 import Mail from '../../images/mail.svg';
 import Important from '../../images/important.svg';
