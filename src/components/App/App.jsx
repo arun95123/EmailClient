@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../Nav';
 import Navigator from '../Navigator';
+import './theme.scss';
 
 
 const App = () => (

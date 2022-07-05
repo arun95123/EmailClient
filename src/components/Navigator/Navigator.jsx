@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ComponseEmail from './ComponseEmail';
 import NavigatorItem from './NavigatorItem';
 import Label from './Label';
 import Inbox from '../../images/inbox.svg';
@@ -76,6 +77,7 @@ const Navigator = () => {
 	const labels = ['Family', 'Work', 'Home', 'Children', 'Holidays', 'Music', 'Photography', 'Film'];
 	return (
 		<div className="navigator">
+			<ComponseEmail />
 			<div className="navigator__folders">
 				<h5>FOLDERS</h5>
 				{folders.map(({header, image, imageAlt, count, showDivider}) => (

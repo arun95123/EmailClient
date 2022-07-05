@@ -52,4 +52,9 @@ describe('Navigator', () => {
 		expect(getByText('Photography')).toBeTruthy();
 		expect(getByText('Film')).toBeTruthy();
 	});
+
+	test('Show Compose Email button', () => {
+		const {getByText} = render(<Navigator />,);
+		expect(getByText('Compose Mail')).toBeTruthy();
+	});
 });

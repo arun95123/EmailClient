@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { Component } = require('react');
 
 
 module.exports = {
@@ -19,7 +20,12 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', {
+					loader: 'sass-resources-loader',
+					options: {
+						resources: path.resolve(__dirname, 'src/components/App/theme.scss')
+					}
+				}]
 			},
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i, 
