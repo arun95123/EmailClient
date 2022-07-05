@@ -1,0 +1,46 @@
+$hr-color: #e7eaec;
+
+.navigator-item {
+    // max-width: $maximum-width;
+    font-family: 'Vazir', sans-serif;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        &__image {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+    
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    
+        &__header {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        &__count {
+            font-size: 0.83em;
+            padding: 2px 10px;
+            background: red;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+
+    &__divider {
+        color: $hr-color;
+        border-top: 1px;
+    }
+}
