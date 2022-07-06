@@ -2,10 +2,34 @@ import {
 	render
 } from '@testing-library/react';
 import Mails from '../../../../src/components/MailList/Mails';
+import {EmailDataContext} from '../../../../src/contexts';
 
 describe('Mails', () => {
-	test('Show MailList Header section', () => {
-		const {getByText} = render(<Mails />,);
-		expect(getByText('Pudge Butcher')).toBeTruthy();
+	test('Shows the mail items', () => {
+		let emailData = {
+			unreadMailCount: 2,
+			mails: {
+				1: {
+					from: 'him',
+					time: 'today',
+					subject: 'something',
+					unread: true
+				},
+				2: {
+					from: 'her',
+					time: 'today',
+					subject: 'anything'
+				}
+			}
+		};
+
+		const {getByText} = render(
+			<EmailDataContext.Provider value={{emailData}}>
+				<Mails />)
+			</EmailDataContext.Provider>
+		);
+		expect(getByText('something')).toBeTruthy();
+		expect(getByText('anything')).toBeTruthy();
+
 	});
 });

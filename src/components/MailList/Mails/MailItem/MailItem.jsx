@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
+import { EmailDataContext } from '../../../../contexts';
 import Attachment from '../../../../images/attachment.svg';
 import './mail-item.scss';
 import ColoredLabel from '../../../ColoredLabel/ColoredLabel';
@@ -10,16 +11,27 @@ const labelColor = {
 	'Ads': 'blue'
 };
 
-const MailItem = ({from, subject, time, label, hasAttachment}) => (
-	<div className='mail-item'>
-		<input type={'checkbox'} />
-		<h6 className='mail-item__from'>{from}</h6>
-		{label ? <ColoredLabel text={label} color={labelColor[label]} /> : <div></div>}
-		<h6 className='mail-item__subject'>{subject}</h6>
-		{hasAttachment ? <img src={Attachment} alt={'attachment'}/> : <div></div>}
-		<h6 className='mail-item__time'>{time}</h6>
-	</div>
-);
+const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId}) => {
+
+	const {emailData, setEmailData} = useContext(EmailDataContext);
+
+	const emailClick = () => {
+		emailData.mails[emailId].unread = false;
+		emailData.unreadMailCount = emailData.unreadMailCount - 1;
+		setEmailData({...emailData});
+	};
+
+	return(
+		<div className={`mail-item ${unread ? 'mail-item-unread' : ''}`} onClick={emailClick}>
+			<input type={'checkbox'} onClick={(e) => e.stopPropagation()}/>
+			<h6 className='mail-item__from'>{from}</h6>
+			{label ? <ColoredLabel text={label} color={labelColor[label]} /> : <div></div>}
+			<h6 className='mail-item__subject'>{subject}</h6>
+			{hasAttachment ? <img src={Attachment} alt={'attachment'}/> : <div></div>}
+			<h6 className='mail-item__time'>{time}</h6>
+		</div>
+	);
+};
 
 MailItem.propTypes = {
 	from: PropTypes.string.isRequired,
@@ -27,11 +39,14 @@ MailItem.propTypes = {
 	time: PropTypes.string.isRequired,
 	label: PropTypes.string,
 	hasAttachment: PropTypes.bool,
+	unread: PropTypes.bool,
+	emailId: PropTypes.string.isRequired,
 };
 
 MailItem.defaultProps = {
 	label: null,
-	hasAttachment: false
+	hasAttachment: false,
+	unread: false
 };
 
 export default MailItem;

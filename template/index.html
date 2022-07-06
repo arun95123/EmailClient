@@ -2,6 +2,80 @@
     <head>
         <title><%= htmlWebpackPlugin.options.title %></title>
     </head>
+    <script>
+        if(!sessionStorage.getItem('emailData')){
+            sessionStorage.setItem('emailData', JSON.stringify({
+                'emma@hogwarts.com': {
+                    password: 'gryf',
+                    mailId: 10,
+                    mailCount: 10,
+                    unreadMailCount: 2,
+                    draftCount: 2,
+                    mails: {
+                        1: {
+                            from: 'Pudge Butcher',
+                            subject: 'Regarding food',
+                            time: '6.00 PM',
+                            hasAttachment: true,
+                            label: 'Documents',
+                            unread: true
+                        },
+                        2: {
+                            from: 'Ezio Audiotre',
+                            subject: 'Rest in Peace',
+                            time: '12.00 AM',
+                            unread: true
+                        },
+                        3: {
+                            from: 'Naruto Uzumaki',
+                            subject: 'New Jutusu',
+                            time: 'Jan 30',
+                            label: 'Clients'
+                        },
+                        4: {
+                            from: 'Eren Yegar',
+                            subject: 'Defence of he walls',
+                            time: 'Jan 1',
+                            hasAttachment: true,
+                        },
+                        5: {
+                            from: 'Rob Stark',
+                            subject: 'Regarding red wedding',
+                            time: 'Dec 31',
+                        },
+                        6: {
+                            from: 'Hinata Shoyo',
+                            subject: 'Vollyball festival',
+                            time: 'Dec 1',
+                            label: 'Ads'
+                        },
+                        7: {
+                            from: 'Hinata Hyuga',
+                            subject: 'Wedding day',
+                            time: 'Nov 25',
+                        },
+                        8: {
+                            from: 'Mikasa Ackerman',
+                            subject: 'War is incoming',
+                            time: 'Nov 1',
+                        },
+                        9: {
+                            from: 'Emma Watson',
+                            subject: 'House clans problem',
+                            time: 'Sept 30',
+                        },
+                        10: {
+                            from: 'Jack Daniels',
+                            subject: 'Time to Party',
+                            time: 'Sept 1',
+                        }
+                    }
+                }
+            }));
+        }else {
+            console.log('ALREADY THERE', sessionStorage.getItem('emailData'))
+        }
+    </script>
     <body>
         <noscript>
             You need to enable JavaScript to run this app.

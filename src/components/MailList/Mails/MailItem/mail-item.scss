@@ -65,3 +65,11 @@
         justify-self: flex-end;
     }
 }
+
+.mail-item-unread {
+    background-color: #F9F8F8;
+
+    h6{
+        font-weight: bold;
+    }
+}
