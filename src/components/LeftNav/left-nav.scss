@@ -1,6 +1,55 @@
 .left-nav {
-    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 3rem;
     font-family: $font;
     color: white;
     background-color: #2E4050;
+    transition: width 2s;
+
+    &__collapsed {
+        display: block;
+        transition: display 2s;
+    }
+
+    &__expanded {
+        width: 8rem;
+        display: none;
+        transition: display 2s;
+
+        &__profile-wrapper {
+            margin: auto auto;
+            width: 6rem;
+            padding: 20px 0;
+        }
+
+        &__pic {
+            width: 66px;
+            border-radius: 50px;
+            margin-bottom: 4px;
+        }
+
+        &__name {
+            font-size: 14px;
+        }
+
+        &__role {
+            font-size: 10px;
+            color: #495D6F;
+        }
+
+    }
+}
+
+.left-nav-expanded {
+    width: 8rem;
+
+    .left-nav__collapsed {
+        display: none;
+    }
+
+    .left-nav__expanded {
+        display: block;
+    }
 }

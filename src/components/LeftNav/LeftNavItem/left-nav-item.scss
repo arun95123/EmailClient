@@ -2,15 +2,28 @@
     background-color: #2E4050;
     padding: 10px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #2E4050;
 
     img {
         height: 15px;
         width: 15px;
     }
+
+    h6 {
+        margin: 0;
+        margin-left: 5px;
+        color: #A6B1C3;
+    }
 }
 
 .selected {
     background-color: #273B4A;
+
+    h6 {
+        color: white;
+    }
 }
 
 .highlight {

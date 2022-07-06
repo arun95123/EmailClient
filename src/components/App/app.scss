@@ -1,6 +1,14 @@
-.app {
-    display: grid;
-    grid-template-columns: 5% 1fr;
+body {
+    margin: 0;
+}
+
+.content-wrapper {
+    margin-left: 3rem;
+    transition: margin-left 2s;
+}
+
+.content-wrapper-slide {
+    margin-left: 8rem;
 }
 
 .content-area {

@@ -5,10 +5,11 @@ import LeftNavItem from '../../../../src/components/LeftNav/LeftNavItem';
 
 describe('LeftNavItem', () => {
 	test('render component', () => {
-		const {getByAltText, container} = render(<LeftNavItem icon={'something'} iconAlt={'anything'} selected highlight />,);
+		const {getByAltText, getByText, container} = render(<LeftNavItem icon={'something'} iconAlt={'anything'} selected highlight heading='Some'/>,);
 		expect(getByAltText('anything')).toBeTruthy();
 		expect(container.getElementsByClassName('selected').length).toBe(1);
 		expect(container.getElementsByClassName('highlight').length).toBe(1);
+		expect(getByText('Some')).toBeTruthy();
 
 	});
 
