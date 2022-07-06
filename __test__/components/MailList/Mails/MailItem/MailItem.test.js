@@ -54,4 +54,33 @@ describe('MailItem', () => {
 			}
 		});
 	});
+
+	test('click on item marks mail as read', () => {
+		let emailData = {
+			unreadMailCount: 2,
+			mails: {
+				1: {
+					from: 'him',
+					time: 'today',
+					subject: 'something',
+					unread: true
+				}
+			}
+		};
+
+		let setEmailMock = jest.fn();
+		let setSelectedMailsMock = jest.fn();
+
+		const {getByRole} = render(
+			<EmailDataContext.Provider value={{emailData, setEmailData: setEmailMock}}>
+				<MailItem from='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}
+					setSelectedMails={setSelectedMailsMock} selectedMails={['2', '3']}
+				/>)
+			</EmailDataContext.Provider>
+		);
+		fireEvent.click(getByRole('checkbox'));
+		expect(setSelectedMailsMock).toHaveBeenCalledWith(['2', '3', '1']);
+		fireEvent.click(getByRole('checkbox'));
+		expect(setSelectedMailsMock).toHaveBeenCalledWith(['2', '3']);
+	});
 });

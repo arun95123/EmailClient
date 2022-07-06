@@ -11,7 +11,7 @@ const labelColor = {
 	'Ads': 'blue'
 };
 
-const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId}) => {
+const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId, setSelectedMails, selectedMails}) => {
 
 	const {emailData, setEmailData} = useContext(EmailDataContext);
 
@@ -21,9 +21,21 @@ const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId}) 
 		setEmailData({...emailData});
 	};
 
+	const checkBoxClick = (e) => {
+		e.stopPropagation();
+		if(e.target.checked){
+			selectedMails.push(emailId);
+			setSelectedMails([...selectedMails]);
+		}else {
+			let index = selectedMails.indexOf(emailId);
+			selectedMails.splice(index, 1);
+			setSelectedMails([...selectedMails]);
+		}
+	};
+
 	return(
 		<div className={`mail-item ${unread ? 'mail-item-unread' : ''}`} onClick={emailClick}>
-			<input type={'checkbox'} onClick={(e) => e.stopPropagation()}/>
+			<input type={'checkbox'} onClick={checkBoxClick}/>
 			<h6 className='mail-item__from'>{from}</h6>
 			{label ? <ColoredLabel text={label} color={labelColor[label]} /> : <div></div>}
 			<h6 className='mail-item__subject'>{subject}</h6>
@@ -41,6 +53,8 @@ MailItem.propTypes = {
 	hasAttachment: PropTypes.bool,
 	unread: PropTypes.bool,
 	emailId: PropTypes.string.isRequired,
+	setSelectedMails: PropTypes.func,
+	selectedMails: PropTypes.arrayOf(PropTypes.string)
 };
 
 MailItem.defaultProps = {
