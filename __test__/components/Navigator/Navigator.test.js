@@ -2,10 +2,16 @@ import {
 	render, screen
 } from '@testing-library/react';
 import Navigator from '../../../src/components/Navigator';
+import {EmailDataContext} from '../../../src/contexts';
+
 
 describe('Navigator', () => {
 	test('Show folders section', () => {
-		const {getByText} = render(<Navigator />,);
+		const {getByText} = render(
+			<EmailDataContext.Provider value={{emailData: {draftCount: 2, mailCount:25}}}>
+				<Navigator />
+			</EmailDataContext.Provider>
+		);
 		const image = screen.getAllByRole('img');
 		const hr = screen.getAllByRole('separator');
 		expect(getByText('FOLDERS')).toBeTruthy();

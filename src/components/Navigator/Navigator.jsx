@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import ComponseEmail from './ComponseEmail';
 import NavigatorItem from './NavigatorItem';
+import { EmailDataContext } from '../../contexts';
 import Label from '../Label';
 import Inbox from '../../images/inbox.svg';
 import Mail from '../../images/mail.svg';
@@ -12,13 +13,14 @@ import LabelImage from '../../images/label.svg';
 import './navigator.scss';
 
 const Navigator = () => {
+	const {emailData} = useContext(EmailDataContext);
 	const folders = [
 		{
 			header: 'Inbox',
 			image:  Inbox,
 			imageAlt: 'inbox',
 			showDivider: true,
-			count: 25,
+			count: emailData.mailCount,
 			countColor: 'yellow'
 		},
 		{
@@ -38,7 +40,7 @@ const Navigator = () => {
 			image:  Draft,
 			imageAlt: 'draft',
 			showDivider: true,
-			count: 2,
+			count: emailData.draftCount,
 			countColor: 'red'
 		},
 		{

@@ -24,7 +24,7 @@ describe('MailItem', () => {
 	test('switches color of label based on label', () => {
 		let {container} = render(<MailItem from='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}/>,);
 		expect(container.getElementsByClassName('red-label').length).toBe(1);
-		let {container: container2} = render(<MailItem from='he' subject='secret' time='12.00 PM' label='Ads' />,);
+		let {container: container2} = render(<MailItem from='he' subject='secret' time='12.00 PM' label='Ads' emailId={'1'}/>,);
 		expect(container2.getElementsByClassName('blue-label').length).toBe(1);
 	});
 
