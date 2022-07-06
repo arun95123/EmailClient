@@ -1,3 +1,8 @@
+.app {
+    display: grid;
+    grid-template-columns: 5% 1fr;
+}
+
 .content-area {
     display: grid;
     grid-template-columns: 25% 75%;

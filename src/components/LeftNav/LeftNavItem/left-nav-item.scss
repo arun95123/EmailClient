@@ -1,0 +1,18 @@
+.left-nav-item {
+    background-color: #2E4050;
+    padding: 10px;
+    text-align: center;
+
+    img {
+        height: 15px;
+        width: 15px;
+    }
+}
+
+.selected {
+    background-color: #273B4A;
+}
+
+.highlight {
+    border-left: 4px solid $primary-color;
+}
