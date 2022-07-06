@@ -1,0 +1,55 @@
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: $font;
+}
+
+.mail-modal {
+    display: flex;
+    flex-direction: column;
+    font-family: $font;
+    justify-content: center;
+    height: 100%;
+
+    &__row {
+        display: flex;
+        margin-bottom: 20px;
+
+        div {
+            padding: 5px 18px;
+            border: 1px solid #00b494;
+            border-radius: 4px;
+            margin-right: 25px;
+        }
+
+        input {
+            border: 0;
+            flex-grow: 1;
+            border-bottom: 1px solid $primary-color;
+        }
+    }
+
+    &__subject {
+        border: 0;
+        border-bottom: 1px solid $primary-color;
+        margin: 20px 0;
+    }
+
+    &__body {
+        border: 0;
+        height: 60%;
+        border-bottom: 1px solid $primary-color;
+    }
+
+    button {
+        background-color: #00b494;
+        width: 200px;
+        margin-top: 20px;
+        color: white;
+        padding: 8px;
+        border: 1px;
+        border-radius: 4px;
+        align-self: center;
+    }
+}
