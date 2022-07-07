@@ -9,7 +9,7 @@ module.exports = {
 	],
 	moduleNameMapper: {
 		'\\.(css|scss)$': '<rootDir>/__mocks__/styleMock.js',
-		'\\.(gif|ttf|eot|svg|jpeg)$': '<rootDir>/__mocks__/fileMock.js'
+		'\\.(gif|ttf|eot|svg|jpeg|png)$': '<rootDir>/__mocks__/fileMock.js'
 	},
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['<rootDir>/jest.setup.js']

@@ -10,4 +10,17 @@ $navigator-background: #f3f3f4;
             flex-wrap: wrap;
         }
     }
+
+    &__folders, &__categories, &__labels {
+        color: #676A6C;
+    }
+
+    &__categories {
+        &__dots {
+            img {
+                height: 55%;
+                width: 55%;
+            }
+        }
+    }
 }

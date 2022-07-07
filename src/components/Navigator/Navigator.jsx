@@ -9,6 +9,12 @@ import Mail from '../../images/mail.svg';
 import Important from '../../images/important.svg';
 import Draft from '../../images/draft.svg';
 import Trash from '../../images/trash.svg';
+import Red from '../../images/red.png';
+import Yellow from '../../images/yellow.png';
+import Blue from '../../images/blue.png';
+import Aqua from '../../images/aqua.png';
+import Green from '../../images/green.png';
+
 import LabelImage from '../../images/label.svg';
 import './navigator.scss';
 
@@ -56,27 +62,27 @@ const Navigator = () => {
 	const categories = [
 		{
 			header: 'Work',
-			image:  Inbox,
+			image:  Green,
 			imageAlt: 'decorative',
 		},
 		{
 			header: 'Documents',
-			image:  Mail,
+			image:  Red,
 			imageAlt: 'decorative',
 		},
 		{
 			header: 'Social',
-			image:  Important,
+			image:  Blue,
 			imageAlt: 'decorative',
 		},
 		{
 			header: 'Advertising',
-			image:  Draft,
+			image:  Aqua,
 			imageAlt: 'decorative',
 		},
 		{
 			header: 'Clients',
-			image:  Trash,
+			image:  Yellow,
 			imageAlt: 'decorative',
 		}
 	];
@@ -109,6 +115,7 @@ const Navigator = () => {
 						imageAlt={imageAlt}
 						count={count}
 						showDivider={showDivider}
+						classname='navigator__categories__dots'
 					/>
 				))}
 			</div>

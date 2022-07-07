@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import './navigator-item.scss';
 import ColoredLabel from '../../ColoredLabel';
 
-const NavigatorItem = ({image, imageAlt, header, count, countColor, showDivider}) => (
-	<div className="navigator-item">
+const NavigatorItem = ({image, imageAlt, header, count, countColor, showDivider, classname}) => (
+	<div className={`navigator-item ${classname}`}>
 		<div className="navigator-item__content">
 			<div className="navigator-item__content-wrapper">
 				<div className="navigator-item__content__image">
@@ -25,11 +25,13 @@ NavigatorItem.propTypes = {
 	count: PropTypes.number,
 	countColor: PropTypes.string,
 	showDivider: PropTypes.bool,
+	classname: PropTypes.string,
 };
 
 NavigatorItem.defaultProps = {
 	count: null,
 	countColor: null,
+	classname: ''
 };
 
 export default NavigatorItem;

@@ -1,10 +1,14 @@
 $hr-color: #e7eaec;
+$navigator-font-color: #6A6A6A;
 
 .navigator-item {
+    color: $navigator-font-color;
+
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0.5em;
 
         &-wrapper {
             display: flex;
@@ -15,6 +19,9 @@ $hr-color: #e7eaec;
             width: 20px;
             height: 20px;
             margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     
         &__header {
@@ -34,5 +41,6 @@ $hr-color: #e7eaec;
     &__divider {
         color: $hr-color;
         border-top: 1px;
+        margin: 0;
     }
 }
