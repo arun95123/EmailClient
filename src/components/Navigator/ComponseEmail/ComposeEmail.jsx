@@ -11,7 +11,7 @@ const ComposeEmail = () => {
 		emailData.sentMailCount++;
 		emailData.sentMailId++;
 		emailData.sentMails = {
-			[emailData.sentMailId]: {
+			['id'+emailData.sentMailId]: {
 				from: email,
 				name: emailData.name,
 				to,

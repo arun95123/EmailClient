@@ -36,6 +36,17 @@ const App = ({email}) => {
 	}, [email]);
 
 	useEffect(() => {
+		if(originalEmailData[email].sentMailCount < emailData.sentMailCount){
+			let toMail = emailData.sentMails['id'+emailData.sentMailId].to;
+			if(originalEmailData[toMail]){
+				originalEmailData[toMail].mailCount++;
+				originalEmailData[toMail].mailId++;
+				originalEmailData[toMail].mails = {
+					['id'+originalEmailData[toMail].mailId]: {...emailData.sentMails['id'+emailData.sentMailId]},
+					...originalEmailData[toMail].mails
+				};
+			}
+		}
 		originalEmailData[email] = {...emailData};
 		sessionStorage.setItem('emailData', JSON.stringify(originalEmailData));
 	},[emailData]);

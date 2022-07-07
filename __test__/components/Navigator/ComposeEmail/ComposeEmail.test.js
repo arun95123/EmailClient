@@ -59,7 +59,7 @@ describe('ComposeEmail', () => {
 			sentMailId: 2,
 			sentMailCount: 2,
 			sentMails: {
-				2: {
+				'id2': {
 					from: 'from@mail',
 					name: 'Harry',
 					to: 'me',

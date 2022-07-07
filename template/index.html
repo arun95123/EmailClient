@@ -6,7 +6,7 @@
         if(!sessionStorage.getItem('emailData')){
             sessionStorage.setItem('emailData', JSON.stringify({
                 'emma@hogwarts.com': {
-                    password: 'gryf',
+                    password: 'herm',
                     name: 'Emma Watson',
                     mailId: 10,
                     sentMailId: 0,
@@ -15,8 +15,9 @@
                     unreadMailCount: 2,
                     draftCount: 2,
                     mails: {
-                        1: {
-                            from: 'Pudge Butcher',
+                        'id1': {
+                            from: 'pudge@butcher',
+                            name: 'Pudge Butcher',
                             to: 'emma@hogwarts.com',
                             subject: 'Regarding food',
                             cc: 'some@cc.com',
@@ -26,8 +27,9 @@
                             label: 'Documents',
                             unread: true
                         },
-                        2: {
-                            from: 'Ezio Audiotre',
+                        'id2': {
+                            from: 'ezio@assasins',
+                            name: 'Ezio Audiotre',
                             to: 'emma@hogwarts.com',
                             cc: 'any@cc.com',
                             subject: 'Rest in Peace',
@@ -35,59 +37,67 @@
                             time: '12.00 AM',
                             unread: true
                         },
-                        3: {
-                            from: 'Naruto Uzumaki',
+                        'id3': {
+                            from: 'naruto@konaha',
+                            name: 'Naruto Uzumaki',
                             to: 'emma@hogwarts.com',
                             subject: 'New Jutusu',
                             body: 'Suspendisse et aliquam nisi. Suspendisse fermentum.',
                             time: 'Jan 30',
                             label: 'Clients'
                         },
-                        4: {
-                            from: 'Eren Yegar',
+                        'id4': {
+                            from: 'eren@yegar',
+                            name: 'Eren Yegar',
                             to: 'emma@hogwarts.com',
                             subject: 'Defence of he walls',
                             body: 'Proin porttitor tincidunt metus, id pulvinar erat facilisis in.',
                             time: 'Jan 1',
                             hasAttachment: true,
                         },
-                        5: {
-                            from: 'Rob Stark',
+                        'id5': {
+                            from: 'rob@stark',
+                            name: 'Rob Stark',
                             to: 'emma@hogwarts.com',
                             subject: 'Regarding red wedding',
                             body: 'Etiam et lectus vehicula risus faucibus aliquam. Nam id lacus a orci porttito',
                             time: 'Dec 31',
                         },
-                        6: {
-                            from: 'Hinata Shoyo',
+                        'id6': {
+                            from: 'Hinata@Shoyo',
+                            name: 'Hinata Shoyo',
                             to: 'emma@hogwarts.com',
                             subject: 'Vollyball festival',
                             body: 'In aliquet tincidunt tortor non ultricies. Nunc ac maximus tellus.',
                             time: 'Dec 1',
                             label: 'Ads'
                         },
-                        7: {
-                            from: 'Hinata Hyuga',
+                        'id7': {
+                            from: 'Hinata@Hyuga',
+                            name: 'Hinata Hyuga',
                             to: 'emma@hogwarts.com',
                             subject: 'Wedding day',
                             body: 'Etiam sollicitudin erat et neque ultrices, id varius',
                             time: 'Nov 25',
                         },
-                        8: {
-                            from: 'Mikasa Ackerman',
+                        'id8': {
+                            from: 'Mikasa@Ackerman',
+                            name: 'Mikasa Ackerman',
                             to: 'emma@hogwarts.com',
                             subject: 'War is incoming',
                             time: 'Nov 1',
                         },
-                        9: {
-                            from: 'Emma Watson',
+                        'id9': {
+                            from: 'Emma@Watson',
+                            name: 'Emma Watson',
                             to: 'emma@hogwarts.com',
                             subject: 'House clans problem',
                             body: 'Etiam sollicitudin erat et neque ultrices, id varius',
                             time: 'Sept 30',
                         },
-                        10: {
-                            from: 'Jack Deep',
+                        'id10': {
+                            from: 'Jack@Deep',
+                            name: 'Jack Deep',
                             to: 'emma@hogwarts.com',
                             subject: 'Time to Party',
                             time: 'Sept 1',
@@ -96,7 +106,24 @@
                     sentMails: {},
                 },
                 'daniel@hogwarts.com': {
-                    
+                    password: 'harry',
+                    name: 'Daniel Radcliff',
+                    mailId: 1,
+                    sentMailId: 0,
+                    sentMailCount: 0,
+                    mailCount: 1,
+                    unreadMailCount: 0,
+                    draftCount: 2,
+                    mails: {
+                        'id1': {
+                            from: 'rupirt@hogwarts.com',
+                            name: 'Rupirt Grint',
+                            to: 'daniel@hogwarts.com',
+                            subject: 'Where are you',
+                            time: 'Aug 1',
+                        }
+                    },
+                    sentMails: {}
                 }
             }));
         }
