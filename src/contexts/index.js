@@ -3,6 +3,7 @@ import React from 'react';
 export const EmailDataContext = React.createContext({
 	emailData: {
 		name: '',
+		image: '',
 		mailCount: 0,
 		mailId: 0,
 		sentMailId: 0,

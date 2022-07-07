@@ -6,6 +6,10 @@ import Navigator from '../Navigator';
 import MailList from '../MailList';
 import LeftNav from '../LeftNav';
 
+import Emma from '../../images/emma.jpeg';
+import Daniel from '../../images/daniel.jpeg';
+import Rupirt from '../../images/rupirt.jpeg';
+
 import './app.scss';
 let originalEmailData;
 
@@ -14,6 +18,7 @@ const App = () => {
 	const { email } = state;
 	const [emailData, setEmailData] = useState({
 		name: '',
+		image: '',
 		mailCount: 0,
 		mailId: 0,
 		sentMailId: 0,
@@ -34,6 +39,9 @@ const App = () => {
 
 	useEffect(() => {
 		originalEmailData = JSON.parse(sessionStorage.getItem('emailData'));
+		originalEmailData['emma@hogwarts.com'].image = Emma;
+		originalEmailData['daniel@hogwarts.com'].image = Daniel;
+		originalEmailData['rupirt@hogwarts.com'].image = Rupirt;
 		setEmailData(originalEmailData[email]);
 	}, [email]);
 

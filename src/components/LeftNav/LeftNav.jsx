@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
+import { EmailDataContext } from '../../contexts';
 import LeftNavItem from './LeftNavItem';
 import Profile from '../../images/profile.svg';
 import EmailWhite from '../../images/email_white.svg';
@@ -7,11 +8,11 @@ import Science from '../../images/science.svg';
 import Diamond from '../../images/diamond.svg';
 import Chart from '../../images/chart.svg';
 import Form from '../../images/form.svg';
-import Pic from '../../images/pic.jpeg';
 
 import './left-nav.scss';
 
 const LeftNav = () => {
+	const {emailData} = useContext(EmailDataContext);
 	useEffect(() => {
 		document.addEventListener('left-nav-expand', () => {
 			document.getElementsByClassName('left-nav')[0].classList.add('left-nav-expanded');
@@ -33,8 +34,8 @@ const LeftNav = () => {
 			</div>
 			<div className='left-nav__expanded'>
 				<div className='left-nav__expanded__profile-wrapper'>
-					<img className='left-nav__expanded__pic' src={Pic} alt='profile-pic' />
-					<div className='left-nav__expanded__name'>Emma Watson</div>
+					<img className='left-nav__expanded__pic' src={emailData.image} alt='profile-pic' />
+					<div className='left-nav__expanded__name'>{emailData.name}</div>
 					<div className='left-nav__expanded__role'>Vice Director</div>
 				</div>
 				<LeftNavItem icon={Dashboard} iconAlt={'dashboard'} heading={'Dashboard'}/>

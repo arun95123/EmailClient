@@ -1,6 +1,7 @@
 import {
 	render, fireEvent
 } from '@testing-library/react';
+import { EmailDataContext } from '../../../src/contexts';
 import LeftNav from '../../../src/components/LeftNav';
 
 describe('LeftNav', () => {
@@ -16,7 +17,11 @@ describe('LeftNav', () => {
 	});
 
 	test('Show LeftNav Expanded Items', () => {
-		const {getAllByAltText, getByText, getByAltText} = render(<LeftNav />);
+		const {getAllByAltText, getByText, getByAltText} = render(
+			<EmailDataContext.Provider value={{emailData: {name: 'Emma Watson', image: 'emma.jpg'}}}>
+				<LeftNav />
+			</EmailDataContext.Provider>
+		);
 		expect(getByAltText('profile')).toBeTruthy();
 		expect(getByText('Emma Watson')).toBeTruthy();
 		expect(getByText('Vice Director')).toBeTruthy();

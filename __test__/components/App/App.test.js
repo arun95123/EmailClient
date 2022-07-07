@@ -80,6 +80,9 @@ describe('App', () => {
 				},
 				sentMails: {}
 			},
+			'emma@hogwarts.com': {},
+			'daniel@hogwarts.com': {},
+			'rupirt@hogwarts.com': {},
 		}));
 		const {getAllByRole, getByText} = render(
 			<BrowserRouter>
@@ -155,7 +158,10 @@ describe('App', () => {
 					}
 				},
 				sentMails: {}
-			}
+			},
+			'emma@hogwarts.com': {image:'test-file-stub'},
+			'daniel@hogwarts.com': {image:'test-file-stub'},
+			'rupirt@hogwarts.com': {image:'test-file-stub'},
 		}));
 
 	});

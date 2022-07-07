@@ -105,26 +105,93 @@
                     },
                     sentMails: {},
                 },
-                'daniel@hogwarts.com': {
-                    password: 'harry',
-                    name: 'Daniel Radcliff',
+                'rupirt@hogwarts.com': {
+                    password: 'ron',
+                    name: 'Rupirt Grint',
                     mailId: 1,
-                    sentMailId: 0,
-                    sentMailCount: 0,
+                    sentMailId: 1,
+                    sentMailCount: 1,
                     mailCount: 1,
                     unreadMailCount: 0,
                     draftCount: 2,
                     mails: {
                         'id1': {
-                            from: 'rupirt@hogwarts.com',
-                            name: 'Rupirt Grint',
-                            to: 'daniel@hogwarts.com',
+                            from: 'daniel@hogwarts.com',
+                            name: 'Daniel Radcliff',
+                            to: 'rupirt@hogwarts.com',
                             subject: 'Where are you',
                             time: 'Aug 1',
                         }
                     },
-                    sentMails: {}
-                }
+                    sentMails: {
+                        'id1': {
+                            from: 'rupirt@hogwarts.com',
+                            name: 'Rupirt Grint',
+                            to: 'professor@hogwarts.com',
+                            subject: 'Please pass me',
+                            time: 'Aug 1',
+                        }
+                    }
+                },
+                'daniel@hogwarts.com': {
+                    password: 'harry',
+                    name: 'Daniel Radcliff',
+                    mailId: 5,
+                    sentMailId: 0,
+                    sentMailCount: 0,
+                    mailCount: 5,
+                    unreadMailCount: 4,
+                    draftCount: 2,
+                    mails: {
+                        'id1': {
+                            from: 'Jack@Deep',
+                            name: 'Jack Deep',
+                            to: 'daniel@hogwarts.com',
+                            subject: 'Time to Party',
+                            time: '6.00 PM',
+                            hasAttachment: true,
+                            label: 'Documents',
+                            unread: true
+                        },
+                        'id2': {
+                            from: 'Emma@Watson',
+                            name: 'Emma Watson',
+                            to: 'daniel@hogwarts.com',
+                            subject: 'House clans problem',
+                            body: 'Etiam sollicitudin erat et neque ultrices, id varius',
+                            time: 'Sept 30',
+                            unread: true
+                        },
+                        'id3': {
+                            from: 'Mikasa@Ackerman',
+                            name: 'Mikasa Ackerman',
+                            to: 'daniel@hogwarts.com',
+                            subject: 'War is incoming',
+                            time: 'Jul 1',
+                            unread: true
+                        },
+                        'id4': {
+                            from: 'Hinata@Hyuga',
+                            name: 'Hinata Hyuga',
+                            to: 'daniel@hogwarts.com',
+                            subject: 'Wedding day',
+                            body: 'Etiam sollicitudin erat et neque ultrices, id varius',
+                            time: 'Jun 25',
+                            hasAttachment: true,
+                            unread: true
+                        },
+                        'id5': {
+                            from: 'Hinata@Shoyo',
+                            name: 'Hinata Shoyo',
+                            to: 'daniel@hogwarts.com',
+                            subject: 'Vollyball festival',
+                            body: 'In aliquet tincidunt tortor non ultricies. Nunc ac maximus tellus.',
+                            time: 'Jan 1',
+                            label: 'Ads'
+                        },
+                    },
+                    sentMails: {},
+                },
             }));
         }
     </script>
