@@ -28,20 +28,25 @@ describe('MailItem', () => {
 		expect(container2.getElementsByClassName('blue-label').length).toBe(1);
 	});
 
-	test('click on item marks mail as read', () => {
+	test('click on item marks mail as read and shows mail', () => {
 		let emailData = {
 			unreadMailCount: 2,
 			mails: {
 				1: {
+					from: 'her',
+					cc: 'friend',
+					subject: 'secret',
+					body: 'reject',
 					unread: true
 				}
 			}
 		};
 
 		let setEmailMock = jest.fn();
+		let readMailMock = jest.fn();
 		const {getByText} = render(
 			<EmailDataContext.Provider value={{emailData, setEmailData: setEmailMock}}>
-				<MailItem name='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}/>)
+				<MailItem from='her' cc='friend' name='he' subject='secret' body='reject' time='12.00 PM' label='Documents' emailId={'1'} readMail={readMailMock}/>)
 			</EmailDataContext.Provider>
 		);
 		fireEvent.click(getByText('secret'));
@@ -49,13 +54,18 @@ describe('MailItem', () => {
 			unreadMailCount: 1,
 			mails: {
 				1: {
+					from: 'her',
+					cc: 'friend',
+					subject: 'secret',
+					body: 'reject',
 					unread: false
 				}
 			}
 		});
+		expect(readMailMock).toHaveBeenCalledWith('her','friend','secret','reject');
 	});
 
-	test('click on item marks mail as read', () => {
+	test('click on checkbox marks them as selecteed', () => {
 		let emailData = {
 			unreadMailCount: 2,
 			mails: {

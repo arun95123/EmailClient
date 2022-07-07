@@ -11,7 +11,7 @@ const labelColor = {
 	'Ads': 'blue'
 };
 
-const MailItem = ({name, subject, time, label, hasAttachment, unread, emailId, setSelectedMails, selectedMails}) => {
+const MailItem = ({readMail, from, cc, body, name, subject, time, label, hasAttachment, unread, emailId, setSelectedMails, selectedMails}) => {
 
 	const {emailData, setEmailData} = useContext(EmailDataContext);
 
@@ -19,6 +19,7 @@ const MailItem = ({name, subject, time, label, hasAttachment, unread, emailId, s
 		emailData.mails[emailId].unread = false;
 		emailData.unreadMailCount = emailData.unreadMailCount - 1;
 		setEmailData({...emailData});
+		readMail(from, cc, subject, body);
 	};
 
 	const checkBoxClick = (e) => {
@@ -47,20 +48,28 @@ const MailItem = ({name, subject, time, label, hasAttachment, unread, emailId, s
 
 MailItem.propTypes = {
 	name: PropTypes.string.isRequired,
-	subject: PropTypes.string.isRequired,
-	time: PropTypes.string.isRequired,
+	subject: PropTypes.string,
+	from: PropTypes.string.isRequired,
+	cc: PropTypes.string,
+	body: PropTypes.string,
+	time: PropTypes.string,
 	label: PropTypes.string,
 	hasAttachment: PropTypes.bool,
 	unread: PropTypes.bool,
 	emailId: PropTypes.string.isRequired,
 	setSelectedMails: PropTypes.func,
+	readMail: PropTypes.func.isRequired,
 	selectedMails: PropTypes.arrayOf(PropTypes.string)
 };
 
 MailItem.defaultProps = {
 	label: null,
 	hasAttachment: false,
-	unread: false
+	unread: false,
+	subject: '',
+	cc: '',
+	body: '',
+	time: '',
 };
 
 export default MailItem;

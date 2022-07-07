@@ -22,7 +22,7 @@ describe('MailModal', () => {
 		expect(closeModalMock).toHaveBeenCalled();
 	});
 
-	test('closes modal', () => {
+	test('sends mail and closes modal', () => {
 		const closeModalMock = jest.fn();
 		const sendMailMock = jest.fn();
 		const {getAllByRole, getByRole} = render(<MailModal isOpen={true} closeModal={closeModalMock} sendClick={sendMailMock}/>);
@@ -39,6 +39,24 @@ describe('MailModal', () => {
 			'time': '',
 		});
 		expect(closeModalMock).toHaveBeenCalled();
+	});
+
+	test('shows mail', () => {
+		const closeModalMock = jest.fn();
+		const {getByDisplayValue, queryByText} = render(<MailModal isOpen={true} closeModal={closeModalMock} 
+			emailContent={{
+				from: 'her',
+				cc: 'friend',
+				subject: 'proposal',
+				body: 'result is rejected'
+			}}
+		/>);
+		expect(getByDisplayValue('her')).toBeTruthy();
+		expect(getByDisplayValue('friend')).toBeTruthy();
+		expect(getByDisplayValue('proposal')).toBeTruthy();
+		expect(getByDisplayValue('result is rejected')).toBeTruthy();
+		expect(queryByText('Send')).not.toBeInTheDocument();
+
 	});
 
 });
