@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {useLocation} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { EmailDataContext } from '../../contexts';
 import TopNav from '../TopNav';
@@ -9,7 +10,9 @@ import LeftNav from '../LeftNav';
 import './app.scss';
 let originalEmailData;
 
-const App = ({email}) => {
+const App = () => {
+	const {state} = useLocation();
+	const { email } = state;
 	const [emailData, setEmailData] = useState({
 		name: '',
 		mailCount: 0,
@@ -40,6 +43,7 @@ const App = ({email}) => {
 			let toMail = emailData.sentMails['id'+emailData.sentMailId].to;
 			if(originalEmailData[toMail]){
 				originalEmailData[toMail].mailCount++;
+				originalEmailData[toMail].unreadMailCount++;
 				originalEmailData[toMail].mailId++;
 				originalEmailData[toMail].mails = {
 					['id'+originalEmailData[toMail].mailId]: {...emailData.sentMails['id'+emailData.sentMailId]},

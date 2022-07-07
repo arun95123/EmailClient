@@ -1,4 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
+import { Link } from 'react-router-dom';
+
 import { EmailDataContext } from '../../contexts';
 import ColoredLabel from '../ColoredLabel';
 import Hamburger from '../../images/menu.svg';
@@ -39,7 +41,7 @@ const TopNav = () => {
 			</div>
 			<div className='top-nav__logout'>
 				<img src={Logout} alt={'logout'} />
-				<div>Log out</div>
+				<Link to='/'>Log out</Link>
 			</div>
 		</div>
 	);
