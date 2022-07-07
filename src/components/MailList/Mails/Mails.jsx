@@ -9,11 +9,12 @@ const Mails = ({setSelectedMails, selectedMails}) => {
 
 	return(
 		<div className='mails-wrapper'>
-			{Object.entries(emailData.mails).map(([emailId, {from, subject, time, hasAttachment, label, unread}]) => (
+			{Object.entries(emailData.mails).map(([emailId, {from, name, subject, time, hasAttachment, label, unread}]) => (
 				<MailItem
 					emailId={emailId}
 					key={emailId}
 					from={from}
+					name={name}
 					subject={subject}
 					time={time}
 					hasAttachment={hasAttachment}

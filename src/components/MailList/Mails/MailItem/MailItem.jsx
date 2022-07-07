@@ -11,7 +11,7 @@ const labelColor = {
 	'Ads': 'blue'
 };
 
-const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId, setSelectedMails, selectedMails}) => {
+const MailItem = ({name, subject, time, label, hasAttachment, unread, emailId, setSelectedMails, selectedMails}) => {
 
 	const {emailData, setEmailData} = useContext(EmailDataContext);
 
@@ -36,7 +36,7 @@ const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId, s
 	return(
 		<div className={`mail-item ${unread ? 'mail-item-unread' : ''}`} onClick={emailClick}>
 			<input type={'checkbox'} onClick={checkBoxClick}/>
-			<h6 className='mail-item__from'>{from}</h6>
+			<h6 className='mail-item__from'>{name}</h6>
 			{label ? <ColoredLabel text={label} color={labelColor[label]} /> : <div></div>}
 			<h6 className='mail-item__subject'>{subject}</h6>
 			{hasAttachment ? <img src={Attachment} alt={'attachment'}/> : <div></div>}
@@ -46,7 +46,7 @@ const MailItem = ({from, subject, time, label, hasAttachment, unread, emailId, s
 };
 
 MailItem.propTypes = {
-	from: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
 	subject: PropTypes.string.isRequired,
 	time: PropTypes.string.isRequired,
 	label: PropTypes.string,

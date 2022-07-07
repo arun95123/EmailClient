@@ -7,7 +7,7 @@ import {EmailDataContext} from '../../../../../src/contexts';
 
 describe('MailItem', () => {
 	test('renders component', () => {
-		const {getByText, getByAltText, container} = render(<MailItem from='he' subject='secret' time='12.00 PM' hasAttachment label='Clients' emailId={'1'}/>,);
+		const {getByText, getByAltText, container} = render(<MailItem name='he' subject='secret' time='12.00 PM' hasAttachment label='Clients' emailId={'1'}/>,);
 		expect(getByText('he')).toBeTruthy();
 		expect(getByText('secret')).toBeTruthy();
 		expect(getByText('12.00 PM')).toBeTruthy();
@@ -17,14 +17,14 @@ describe('MailItem', () => {
 	});
 
 	test('does not render attachment', () => {
-		const {queryByAltText} = render(<MailItem from='he' subject='secret' time='12.00 PM' label='Clients' emailId={'1'}/>,);
+		const {queryByAltText} = render(<MailItem name='he' subject='secret' time='12.00 PM' label='Clients' emailId={'1'}/>,);
 		expect(queryByAltText('attachment')).toBeFalsy();
 	});
 
 	test('switches color of label based on label', () => {
-		let {container} = render(<MailItem from='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}/>,);
+		let {container} = render(<MailItem name='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}/>,);
 		expect(container.getElementsByClassName('red-label').length).toBe(1);
-		let {container: container2} = render(<MailItem from='he' subject='secret' time='12.00 PM' label='Ads' emailId={'1'}/>,);
+		let {container: container2} = render(<MailItem name='he' subject='secret' time='12.00 PM' label='Ads' emailId={'1'}/>,);
 		expect(container2.getElementsByClassName('blue-label').length).toBe(1);
 	});
 
@@ -41,7 +41,7 @@ describe('MailItem', () => {
 		let setEmailMock = jest.fn();
 		const {getByText} = render(
 			<EmailDataContext.Provider value={{emailData, setEmailData: setEmailMock}}>
-				<MailItem from='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}/>)
+				<MailItem name='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}/>)
 			</EmailDataContext.Provider>
 		);
 		fireEvent.click(getByText('secret'));
@@ -60,7 +60,7 @@ describe('MailItem', () => {
 			unreadMailCount: 2,
 			mails: {
 				1: {
-					from: 'him',
+					name: 'him',
 					time: 'today',
 					subject: 'something',
 					unread: true
@@ -73,7 +73,7 @@ describe('MailItem', () => {
 
 		const {getByRole} = render(
 			<EmailDataContext.Provider value={{emailData, setEmailData: setEmailMock}}>
-				<MailItem from='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}
+				<MailItem name='he' subject='secret' time='12.00 PM' label='Documents' emailId={'1'}
 					setSelectedMails={setSelectedMailsMock} selectedMails={['2', '3']}
 				/>)
 			</EmailDataContext.Provider>

@@ -13,6 +13,7 @@ const ComposeEmail = () => {
 		emailData.sentMails = {
 			[emailData.sentMailId]: {
 				from: email,
+				name: emailData.name,
 				to,
 				cc,
 				subject,

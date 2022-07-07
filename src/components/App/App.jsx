@@ -11,6 +11,7 @@ let originalEmailData;
 
 const App = ({email}) => {
 	const [emailData, setEmailData] = useState({
+		name: '',
 		mailCount: 0,
 		mailId: 0,
 		sentMailId: 0,

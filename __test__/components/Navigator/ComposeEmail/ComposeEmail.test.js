@@ -5,7 +5,7 @@ import {
 import { EmailDataContext } from '../../../../src/contexts';
 import ComposeEmail from '../../../../src/components/Navigator/ComponseEmail';
 
-describe('Label', () => {
+describe('ComposeEmail', () => {
 	test('renders component', () => {
 		const {getByText} = render(
 			<EmailDataContext.Provider value={{}}>
@@ -29,11 +29,13 @@ describe('Label', () => {
 
 	test('send email', () => {
 		let emailData = {
+			name: 'Harry',
 			sentMailId: 1,
 			sentMailCount: 1,
 			sentMails: {
 				1: {
 					from: 'him',
+					name: 'Harry',
 					time: 'today',
 					subject: 'something',
 					unread: true
@@ -53,11 +55,13 @@ describe('Label', () => {
 		fireEvent.change(getAllByRole('textbox')[3],{target: {id: 'body', value: 'Hope i clear'}});
 		fireEvent.click((getByText('Send')));
 		expect(setEmailDataMock).toBeCalledWith({
+			name: 'Harry',
 			sentMailId: 2,
 			sentMailCount: 2,
 			sentMails: {
 				2: {
 					from: 'from@mail',
+					name: 'Harry',
 					to: 'me',
 					cc: 'mom',
 					subject: 'Evaluation',
@@ -67,6 +71,7 @@ describe('Label', () => {
 				},
 				1: {
 					from: 'him',
+					name: 'Harry',
 					time: 'today',
 					subject: 'something',
 					unread: true

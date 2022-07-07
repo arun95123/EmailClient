@@ -10,13 +10,13 @@ describe('Mails', () => {
 			unreadMailCount: 2,
 			mails: {
 				1: {
-					from: 'him',
+					name: 'him',
 					time: 'today',
 					subject: 'something',
 					unread: true
 				},
 				2: {
-					from: 'her',
+					name: 'her',
 					time: 'today',
 					subject: 'anything'
 				}
