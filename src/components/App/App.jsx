@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { EmailDataContext } from '../../contexts';
 import TopNav from '../TopNav';
 import Navigator from '../Navigator';
@@ -69,10 +68,6 @@ const App = () => {
 			</div>
 		</EmailDataContext.Provider>
 	);
-};
-
-App.propTypes = {
-	email: PropTypes.string.isRequired,
 };
 
 export default App;
