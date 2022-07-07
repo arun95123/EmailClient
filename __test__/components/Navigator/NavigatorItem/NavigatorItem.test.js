@@ -21,4 +21,9 @@ describe('NavigatorItem', () => {
 		expect(hr).not.toBeInTheDocument();
 		expect(container.getElementsByClassName('navigator-item__content__count').length).toBe(0);
 	});
+
+	test('does not show count when value is 0', () => {
+		const {getByText, container} = render(<NavigatorItem header='Potter' image='dummy-source' imageAlt='dummy' count={0}/>,);
+		expect(container.getElementsByClassName('navigator-item__content__count').length).toBe(0);
+	});
 });

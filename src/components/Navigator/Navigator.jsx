@@ -27,6 +27,8 @@ const Navigator = () => {
 			header: 'Sent Mail',
 			image:  Mail,
 			imageAlt: 'mail',
+			count: emailData.sentMailCount,
+			countColor: 'blue',
 			showDivider: true,
 		},
 		{

@@ -12,9 +12,13 @@ let originalEmailData;
 const App = ({email}) => {
 	const [emailData, setEmailData] = useState({
 		mailCount: 0,
+		mailId: 0,
+		sentMailId: 0,
+		sentMailCount: 0,
 		unreadMailCount: 0,
 		draftCount: 0,
-		mails: [],
+		mails: {},
+		sentMails: {},
 	});
 	useEffect(() => {
 		document.addEventListener('left-nav-expand', () => {
@@ -36,7 +40,7 @@ const App = ({email}) => {
 	},[emailData]);
 
 	return (
-		<EmailDataContext.Provider value={{emailData: emailData, setEmailData: setEmailData}}>
+		<EmailDataContext.Provider value={{emailData: emailData, setEmailData: setEmailData, email}}>
 			<div className='app'>
 				<LeftNav />
 				<div className='content-wrapper'>

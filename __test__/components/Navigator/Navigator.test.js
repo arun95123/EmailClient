@@ -8,7 +8,7 @@ import {EmailDataContext} from '../../../src/contexts';
 describe('Navigator', () => {
 	test('Show folders section', () => {
 		const {getByText} = render(
-			<EmailDataContext.Provider value={{emailData: {draftCount: 2, mailCount:25}}}>
+			<EmailDataContext.Provider value={{emailData: {draftCount: 2, mailCount:25, sentMailCount: 3}}}>
 				<Navigator />
 			</EmailDataContext.Provider>
 		);
@@ -19,6 +19,7 @@ describe('Navigator', () => {
 		expect(getByText('25')).toBeTruthy();
 		expect(image[0]).toHaveAttribute('alt', 'inbox');
 		expect(getByText('Sent Mail')).toBeTruthy();
+		expect(getByText('3')).toBeTruthy();
 		expect(image[1]).toHaveAttribute('alt', 'mail');
 		expect(getByText('Important')).toBeTruthy();
 		expect(image[2]).toHaveAttribute('alt', 'astrick');

@@ -12,7 +12,7 @@ const NavigatorItem = ({image, imageAlt, header, count, countColor, showDivider}
 				</div>
 				<h5 className="navigator-item__content__header">{header}</h5>
 			</div>
-			{count && <ColoredLabel text={count} color={countColor}/>}
+			{count && count >0 && <ColoredLabel text={count} color={countColor}/>}
 		</div>
 		{showDivider && <hr className="navigator-item__divider"/>}
 	</div>
