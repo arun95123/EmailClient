@@ -6,6 +6,16 @@ import { EmailDataContext } from '../../../../src/contexts';
 import ComposeEmail from '../../../../src/components/Navigator/ComponseEmail';
 
 describe('ComposeEmail', () => {
+
+	beforeAll(() => {
+		jest.useFakeTimers('modern');
+		jest.setSystemTime(new Date(2021, 3, 1 , 22, 15));
+	});
+
+	afterAll(() => {
+		jest.useRealTimers();
+	});
+
 	test('renders component', () => {
 		const {getByText} = render(
 			<EmailDataContext.Provider value={{}}>
@@ -66,7 +76,7 @@ describe('ComposeEmail', () => {
 					cc: 'mom',
 					subject: 'Evaluation',
 					body: 'Hope i clear',
-					time: '',
+					time: '10:15 PM',
 					unread: true
 				},
 				1: {

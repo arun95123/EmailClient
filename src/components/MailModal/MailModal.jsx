@@ -22,6 +22,7 @@ const MailModal = ({isOpen, closeModal, sendClick, emailContent}) => {
 		setValues({
 			...values,
 			[e.target.id]: e.target.value,
+			time: new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 		});
 	};
 

@@ -36,10 +36,20 @@ Object.defineProperty(window, 'sessionStorage', {
 
 describe('App', () => {
 
+	beforeAll(() => {
+		jest.useFakeTimers('modern');
+		jest.setSystemTime(new Date(2021, 3, 1 , 22, 15));
+	});
+
 	beforeEach(() => {
 		window.sessionStorage.clear();
 		jest.restoreAllMocks();
 	});
+
+	afterAll(() => {
+		jest.useRealTimers();
+	});
+
 	test('Send email adds mail to corresponding use', () => {
 		window.sessionStorage.setItem('emailData', JSON.stringify({
 			'ezio@creed': {
@@ -125,7 +135,7 @@ describe('App', () => {
 						cc: 'some@cc',
 						subject: 'Check mail',
 						body: 'Hope it is recieved',
-						time: '',
+						time: '10:15 PM',
 						unread: true,
 					}
 				}
@@ -146,7 +156,7 @@ describe('App', () => {
 						cc: 'some@cc',
 						subject: 'Check mail',
 						body: 'Hope it is recieved',
-						time: '',
+						time: '10:15 PM',
 						unread: true,
 					},
 					'id1': {

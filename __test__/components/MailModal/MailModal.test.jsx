@@ -5,6 +5,16 @@ import {
 import MailModal from '../../../src/components/MailModal';
 
 describe('MailModal', () => {
+
+	beforeAll(() => {
+		jest.useFakeTimers('modern');
+		jest.setSystemTime(new Date(2021, 3, 1 , 22, 15));
+	});
+
+	afterAll(() => {
+		jest.useRealTimers();
+	});
+	
 	test('renders component', () => {
 		const closeModalMock = jest.fn();
 		const {getByText, getByPlaceholderText} = render(<MailModal isOpen={true} closeModal={closeModalMock}/>);
@@ -36,7 +46,7 @@ describe('MailModal', () => {
 			'cc': 'mom',
 			'subject': 'Evaluation',
 			'body': 'Hope i clear',
-			'time': '',
+			'time': '10:15 PM',
 		});
 		expect(closeModalMock).toHaveBeenCalled();
 	});
