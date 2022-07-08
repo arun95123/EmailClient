@@ -10,14 +10,22 @@ $label-color: #686B6D;
     margin-right: 8px;
     margin-bottom: 8px;
 
+    @include screen-sm {
+        padding: 2px 4px;
+    }
+
     img {
         height: 15px;
         width: 15px;
-        margin-right: 5px;
     }
 
     p {
         font-size: 12px;
         margin: 0;
+        margin-left: 5px;
+
+        @include screen-sm {
+            font-size: 8px;
+        }
     }
 }

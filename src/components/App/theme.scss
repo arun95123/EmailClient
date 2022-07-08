@@ -1,3 +1,9 @@
 $primary-color: #00b494;
 $border-color: #E5E6E7;
 $font: 'Vazir', sans-serif;
+
+@mixin screen-sm {
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+}

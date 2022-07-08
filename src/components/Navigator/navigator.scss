@@ -4,6 +4,10 @@ $navigator-background: #f3f3f4;
     padding: 20px;
     min-height: 100vh;
 
+    @include screen-sm {
+        display: none;
+    }
+
     &__labels {
         &__wrapper {
             display: flex;

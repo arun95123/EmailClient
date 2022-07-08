@@ -17,4 +17,8 @@ body {
     font-family: $font;
     background-color: #f3f3f4;
     width: 100%;
+
+    @include screen-sm {
+        grid-template-columns: 100%;
+    }
 }

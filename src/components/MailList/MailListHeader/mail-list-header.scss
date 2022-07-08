@@ -8,10 +8,18 @@ $mailHeaderColor: #696C6E;
         display: grid;
         align-items: center;
         grid-template-columns: 25% 1fr 40%;
+
+        @include screen-sm {
+            grid-template-columns: 25% 1fr 70%;
+        }
     
         h2 {
             color: $mailHeaderColor;
             font-weight: normal;
+
+            @include screen-sm {
+                font-size: 15px;
+            }
         }
     
         &__actions {

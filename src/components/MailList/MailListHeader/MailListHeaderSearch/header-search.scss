@@ -11,6 +11,10 @@
         border: none;
         border-radius: 6px 0 0 6px;
         padding: 10px;
+
+        @include screen-sm {
+            font-size: 10px;
+        }
     }
 
     button {
@@ -19,6 +23,10 @@
         color :white;
         border: none;
         border-radius: 0 6px 6px 0;
+
+        @include screen-sm {
+            font-size: 10px;
+        }
 
     }
 }
