@@ -17,6 +17,7 @@ const MailListHeader = ({mailCount, mailHeader, selectedMails}) => {
 
 	const deleteMails = () => {
 		selectedMails.map((emailId) => {
+			emailData.mailCount--;
 			delete emailData.mails[emailId];
 		});
 		setEmailData({...emailData});

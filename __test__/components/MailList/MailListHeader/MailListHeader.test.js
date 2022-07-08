@@ -20,6 +20,7 @@ describe('MailListHeader', () => {
 
 	test('Delete selected mails', () => {
 		let emailData = {
+			mailCount: 2,
 			unreadMailCount: 2,
 			mails: {
 				1: {
@@ -44,6 +45,7 @@ describe('MailListHeader', () => {
 		fireEvent.click(getByAltText('delete'));
 		expect(setEmailDataMock).toHaveBeenCalledWith(
 			{
+				mailCount: 1,
 				unreadMailCount: 2,
 				mails: {
 					1: {
