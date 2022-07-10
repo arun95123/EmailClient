@@ -8,6 +8,7 @@ npm run start
 ```
 
 Once the server starts, visit http://localhost:9000 to view the page.
+To make things simple, currently I am using the webpack dev server to run the application. A node server can be added later to serve the application
 
 Note: The dist directory has been pushed to make it easy to run the application.
 To do a fresh build to update the dist directory 
